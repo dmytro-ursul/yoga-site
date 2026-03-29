@@ -560,7 +560,7 @@
 
       function resetAutoplay() {
         clearInterval(autoplayTimer);
-        autoplayTimer = setInterval(() => goTo(current + 1), 5000);
+        autoplayTimer = setInterval(() => goTo(current + 1), 30000);
       }
 
       document.getElementById('carousel-prev').addEventListener('click', () => { goTo(current - 1); resetAutoplay(); });
