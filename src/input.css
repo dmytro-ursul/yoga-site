@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sky-50: #E8F4FA;
+  --color-sky-100: #D0E9F5;
+  --color-sky-200: #B0D8ED;
+  --color-sky-600: #4A90B8;
+  --color-sky-700: #2E7DA8;
+  --color-sky-800: #1B6A96;
+  --color-beige-50: #FDF8F0;
+  --color-beige-100: #F5EDE0;
+  --color-beige-200: #EDE3D0;
+  --color-beige-300: #DDD0B8;
+  --color-beige-400: #C4B89E;
+  --color-beige-700: #8B7D6B;
+  --color-beige-800: #6B5D4A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-content.open {
+  max-height: 600px;
+}
