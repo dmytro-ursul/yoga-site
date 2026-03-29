@@ -546,7 +546,6 @@
       const dots = document.querySelectorAll('#carousel-dots button');
       const totalSlides = dots.length;
       let current = 0;
-      let autoplayTimer;
 
       function goTo(index) {
         current = (index + totalSlides) % totalSlides;
@@ -558,16 +557,9 @@
         });
       }
 
-      function resetAutoplay() {
-        clearInterval(autoplayTimer);
-        autoplayTimer = setInterval(() => goTo(current + 1), 30000);
-      }
-
-      document.getElementById('carousel-prev').addEventListener('click', () => { goTo(current - 1); resetAutoplay(); });
-      document.getElementById('carousel-next').addEventListener('click', () => { goTo(current + 1); resetAutoplay(); });
-      dots.forEach(dot => dot.addEventListener('click', () => { goTo(+dot.dataset.index); resetAutoplay(); }));
-
-      resetAutoplay();
+      document.getElementById('carousel-prev').addEventListener('click', () => goTo(current - 1));
+      document.getElementById('carousel-next').addEventListener('click', () => goTo(current + 1));
+      dots.forEach(dot => dot.addEventListener('click', () => goTo(+dot.dataset.index)));
     })();
   </script>
 </body>
