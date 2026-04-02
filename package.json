@@ -7,7 +7,7 @@
     "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./public/styles.css --minify",
     "dev:css": "npx @tailwindcss/cli -i ./src/input.css -o ./public/styles.css --watch",
     "start": "node server.js",
-    "dev": "npm run build:css && node server.js"
+    "dev": "concurrently \"npm run dev:css\" \"node server.js\""
   },
   "keywords": [],
   "author": "",
@@ -17,5 +17,10 @@
     "@tailwindcss/cli": "^4.2.2",
     "express": "^5.2.1",
     "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.10.3"
   }
 }
