@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Тетяна Урсул — Йога для мам | Брашов та онлайн</title>
-  <meta name="description" content="Йога як ресурс для мам. Групові, онлайн та індивідуальні заняття у Брашові. Тетяна Урсул — викладач хатха-йоги." />
+  <title>Тетяна Урсул - Йога для мам | Брашов та онлайн</title>
+  <meta name="description" content="Йога як ресурс для мам. Групові, онлайн та індивідуальні заняття у Брашові. Тетяна Урсул - викладач хатха-йоги." />
   <link rel="stylesheet" href="./styles.css" />
+  <script src="./translations.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,13 +16,19 @@
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-beige-100">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#hero" class="font-['Cormorant_Garamond',serif] text-2xl font-semibold text-beige-700">Тетяна Урсул <span class="text-sm font-normal">· викладач хатха-йоги</span></a>
+      <a href="#hero" class="font-['Cormorant_Garamond',serif] text-2xl font-semibold text-beige-700"><span data-i18n="nav.brand">Тетяна Урсул</span> <span class="text-sm font-normal" data-i18n="nav.brand_sub">· викладач хатха-йоги</span></a>
       <div class="hidden md:flex items-center gap-6 text-sm font-medium text-beige-700">
-        <a href="#about" class="hover:text-sky-700 transition">Про мене</a>
-        <a href="#formats" class="hover:text-sky-700 transition">Формати</a>
-        <a href="#pricing" class="hover:text-sky-700 transition">Ціни</a>
-        <a href="#reviews" class="hover:text-sky-700 transition">Відгуки</a>
-        <a href="#contact" class="hover:text-sky-700 transition">Контакти</a>
+        <a href="#about" class="hover:text-sky-700 transition" data-i18n="nav.about">Про мене</a>
+        <a href="#formats" class="hover:text-sky-700 transition" data-i18n="nav.formats">Формати</a>
+        <a href="#pricing" class="hover:text-sky-700 transition" data-i18n="nav.pricing">Ціни</a>
+        <a href="#reviews" class="hover:text-sky-700 transition" data-i18n="nav.reviews">Відгуки</a>
+        <a href="#contact" class="hover:text-sky-700 transition" data-i18n="nav.contact">Контакти</a>
+        <!-- Locale switcher -->
+        <div class="flex items-center gap-1 ml-2 text-xs">
+          <button data-lang-btn="uk" onclick="setLang('uk')" class="px-1.5 py-0.5 rounded bg-sky-700 text-white transition" title="Українська">UA</button>
+          <button data-lang-btn="ru" onclick="setLang('ru')" class="px-1.5 py-0.5 rounded text-beige-700 transition hover:bg-sky-100" title="Русский">RU</button>
+          <button data-lang-btn="en" onclick="setLang('en')" class="px-1.5 py-0.5 rounded text-beige-700 transition hover:bg-sky-100" title="English">EN</button>
+        </div>
       </div>
       <button id="mobile-menu-btn" class="md:hidden p-2 text-beige-700">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -30,11 +37,17 @@
       </button>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-beige-100 px-4 pb-4">
-      <a href="#about" class="block py-2 text-beige-700 hover:text-sky-700">Про мене</a>
-      <a href="#formats" class="block py-2 text-beige-700 hover:text-sky-700">Формати</a>
-      <a href="#pricing" class="block py-2 text-beige-700 hover:text-sky-700">Ціни</a>
-      <a href="#reviews" class="block py-2 text-beige-700 hover:text-sky-700">Відгуки</a>
-      <a href="#contact" class="block py-2 text-beige-700 hover:text-sky-700">Контакти</a>
+      <a href="#about" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.about">Про мене</a>
+      <a href="#formats" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.formats">Формати</a>
+      <a href="#pricing" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.pricing">Ціни</a>
+      <a href="#reviews" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.reviews">Відгуки</a>
+      <a href="#contact" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.contact">Контакти</a>
+      <!-- Mobile locale switcher -->
+      <div class="flex items-center gap-2 pt-2 border-t border-beige-100 mt-2 text-xs">
+        <button data-lang-btn="uk" onclick="setLang('uk')" class="px-2 py-1 rounded bg-sky-700 text-white transition" title="Українська">UA</button>
+        <button data-lang-btn="ru" onclick="setLang('ru')" class="px-2 py-1 rounded text-beige-700 transition hover:bg-sky-100" title="Русский">RU</button>
+        <button data-lang-btn="en" onclick="setLang('en')" class="px-2 py-1 rounded text-beige-700 transition hover:bg-sky-100" title="English">EN</button>
+      </div>
     </div>
   </nav>
 
@@ -45,8 +58,8 @@
       <img src="./images/hero.jpg" alt="" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
     </div>
-    <!-- Social icons — right side, positioned higher -->
-    <div class="absolute right-4 md:right-8 top-1/3 -translate-y-1/2 flex flex-col gap-5 z-10">
+    <!-- Social icons - right side, always visible -->
+    <div class="flex absolute right-4 sm:right-8 top-1/3 -translate-y-1/2 flex-col gap-5 z-10">
       <a href="tel:+40752459355" class="text-white/80 hover:text-white transition" title="+40 752 459 355">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
       </a>
@@ -56,14 +69,17 @@
       <a href="https://t.me/tetiana_ursul" target="_blank" class="text-white/80 hover:text-white transition" title="Telegram">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
       </a>
+      <a href="https://youtube.com/channel/UCj1UTbVyxJdzBzmeyfAYhrA/videos" target="_blank" class="text-white/80 hover:text-white transition" title="YouTube">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      </a>
     </div>
     <!-- Content -->
     <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pb-16 md:pb-24 w-full text-center">
-      <h1 class="font-['Cormorant_Garamond',serif] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 mx-auto max-w-3xl">
+      <h1 class="font-['Cormorant_Garamond',serif] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 mx-auto max-w-3xl" data-i18n="hero.title">
         Йога як ресурс для мам
       </h1>
-      <p class="text-white/60 text-sm mb-8">Брашов та онлайн</p>
-      <a href="https://t.me/tetiana_ursul" target="_blank" class="inline-block border border-white/80 text-white px-8 py-3 text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
+      <p class="text-white/60 text-sm mb-8" data-i18n="hero.location">Брашов та онлайн</p>
+      <a href="https://t.me/tetiana_ursul" target="_blank" class="inline-block border border-white/80 text-white px-8 py-3 text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300" data-i18n="hero.cta">
         Записатись на пробне
       </a>
     </div>
@@ -76,41 +92,41 @@
         <img src="./images/pain-points.jpg" alt="Йога практика" class="rounded-2xl shadow-xl max-h-[480px] object-cover" />
       </div>
       <div>
-        <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-6 text-center">
+        <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-6 text-center" data-i18n="pain.title">
           Можливо, вам знайомі такі стани
         </h2>
         <ul class="space-y-3 text-beige-700">
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>хочеться зайнятися тілом і здоров'ям, але не доходять руки</span>
+            <span data-i18n="pain.1">хочеться зайнятися тілом і здоров'ям, але не доходять руки</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>є напруга або біль у спині</span>
+            <span data-i18n="pain.2">є напруга або біль у спині</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>відчувається втома і нестача енергії</span>
+            <span data-i18n="pain.3">відчувається втома і нестача енергії</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>не хочеться йти в зал або на інтенсивні тренування</span>
+            <span data-i18n="pain.4">не хочеться йти в зал або на інтенсивні тренування</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>хочеться спокою і тиші в голові</span>
+            <span data-i18n="pain.5">хочеться спокою і тиші в голові</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>ніби втрачений контакт із собою</span>
+            <span data-i18n="pain.6">ніби втрачений контакт із собою</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>мало рухаєтесь, переважно сидячий спосіб життя</span>
+            <span data-i18n="pain.7">мало рухаєтесь, переважно сидячий спосіб життя</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>сон став гіршим або не дає відновлення</span>
+            <span data-i18n="pain.8">сон став гіршим або не дає відновлення</span>
           </li>
         </ul>
       </div>
@@ -121,37 +137,37 @@
   <section class="bg-beige-50 py-10">
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-6 text-center">
+        <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-6 text-center" data-i18n="results.title">
           Результати регулярної практики
         </h2>
         <ul class="space-y-3 text-beige-700">
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>тіло стає більш чутливим і починає "слухати" вас</span>
+            <span data-i18n="results.1">тіло стає більш чутливим і починає "слухати" вас</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>зменшується напруга, особливо в спині та тазі</span>
+            <span data-i18n="results.2">зменшується напруга, особливо в спині та тазі</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>поступово підтягується живіт і включаються глибокі м'язи</span>
+            <span data-i18n="results.3">поступово підтягується живіт і включаються глибокі м'язи</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>вирівнюється емоційний стан, з'являється більше внутрішнього спокою</span>
+            <span data-i18n="results.4">вирівнюється емоційний стан, з'являється більше внутрішнього спокою</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>в голові стає тихіше, зменшується перевантаження</span>
+            <span data-i18n="results.5">в голові стає тихіше, зменшується перевантаження</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>з'являється більше енергії у повсякденному житті</span>
+            <span data-i18n="results.6">з'являється більше енергії у повсякденному житті</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-sky-600 mt-1 shrink-0">✦</span>
-            <span>з'являється бажання продовжувати і не кидати</span>
+            <span data-i18n="results.7">з'являється бажання продовжувати і не кидати</span>
           </li>
         </ul>
       </div>
@@ -165,20 +181,19 @@
   <section id="about" class="bg-white py-10">
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-6 text-center">
+        <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-6 text-center" data-i18n="about.title">
           Про мене
         </h2>
         <div class="space-y-4 text-beige-700 leading-relaxed">
-          <p>Мене звати <strong>Тетяна Урсул</strong>, я з Києва.</p>
-          <p>Я викладаю йогу для жінок і мам у Брашові (Тракторул) та онлайн.</p>
-          <p>Я регулярно практикую йогу вже понад 2 роки.</p>
-          <p>Протягом 2025–2026 року навчалась в Академії йоги (на курсах «викладач хатха-йоги» та йогатерапія жіночого здоров'я).</p>
-          <p>У своїх заняттях я поєдную <strong>силу, м'якість і гнучкість</strong> тіла. Я уважно направляю та адаптую практику під кожну, щоб ви займались у своєму темпі.</p>
-          <p class="italic text-sky-700">Для мене йога — це інструмент сили, спокою та гармонії. І саме це я передаю у своїх заняттях.</p>
+          <p data-i18n-html="about.p1">Мене звати <strong>Тетяна Урсул</strong> 🇺🇦</p>
+          <p data-i18n="about.p2">Я викладаю йогу для жінок у Брашові та онлайн. Регулярно практикую йогу вже понад 2 роки.</p>
+          <p data-i18n-html="about.p3">У 2025–2026 роках проходила навчання в Академії йоги<br>(курси «Викладач хатха-йоги» та «Йогатерапія жіночого здоров'я»).</p>
+          <p data-i18n-html="about.p4">У заняттях поєднуються сила, м'якість і гнучкість тіла.<br>Практика будується так, щоб кожна могла рухатись у своєму темпі та з відчуттям комфорту.</p>
+          <p class="italic text-sky-700" data-i18n-html="about.p5">Для мене йога - це інструмент сили, внутрішнього спокою та гармонії.<br>І саме цей стан я передаю у своїх заняттях.</p>
         </div>
       </div>
       <div class="flex justify-center">
-        <img src="./images/about.jpg" alt="Тетяна Урсул — про мене" class="rounded-2xl shadow-xl max-h-[480px] object-cover" />
+        <img src="./images/about.jpg" alt="Тетяна Урсул - про мене" class="rounded-2xl shadow-xl max-h-[480px] object-cover" />
       </div>
     </div>
   </section>
@@ -187,36 +202,36 @@
   <section class="bg-sky-50 py-10">
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-8 text-center">
+        <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-8 text-center" data-i18n="how.title">
           Як проходять заняття
         </h2>
         <div class="space-y-6">
           <div class="flex gap-4">
             <div class="w-10 h-10 rounded-full bg-sky-700 text-white flex items-center justify-center font-semibold shrink-0">1</div>
             <div>
-              <h3 class="font-semibold text-sky-800 mb-1">Знайомство</h3>
-              <p class="text-beige-700">Ви записуєтесь на пробне заняття, щоб відчути формат, темп і мій підхід.</p>
+              <h3 class="font-semibold text-sky-800 mb-1" data-i18n="how.step1.title">Знайомство</h3>
+              <p class="text-beige-700" data-i18n="how.step1.desc">Ви записуєтесь на пробне заняття, щоб відчути формат, темп і мій підхід.</p>
             </div>
           </div>
           <div class="flex gap-4">
             <div class="w-10 h-10 rounded-full bg-sky-700 text-white flex items-center justify-center font-semibold shrink-0">2</div>
             <div>
-              <h3 class="font-semibold text-sky-800 mb-1">Індивідуальний підхід</h3>
-              <p class="text-beige-700">Якщо вам відгукується — ви заповнюєте коротку анкету про здоров'я і обираєте комфортний формат занять.</p>
+              <h3 class="font-semibold text-sky-800 mb-1" data-i18n="how.step2.title">Індивідуальний підхід</h3>
+              <p class="text-beige-700" data-i18n="how.step2.desc">Якщо вам відгукується - ви заповнюєте коротку анкету про здоров'я і обираєте комфортний формат занять.</p>
             </div>
           </div>
           <div class="flex gap-4">
             <div class="w-10 h-10 rounded-full bg-sky-700 text-white flex items-center justify-center font-semibold shrink-0">3</div>
             <div>
-              <h3 class="font-semibold text-sky-800 mb-1">Регулярна практика</h3>
-              <p class="text-beige-700">Заняття проходять за зрозумілою системою на місяць. Кожна практика структурована і побудована так, щоб ви поступово рухались вперед без перевантаження.</p>
+              <h3 class="font-semibold text-sky-800 mb-1" data-i18n="how.step3.title">Регулярна практика</h3>
+              <p class="text-beige-700" data-i18n="how.step3.desc">Заняття проходять за зрозумілою системою на місяць. Кожна практика структурована і побудована так, щоб ви поступово рухались вперед без перевантаження.</p>
             </div>
           </div>
           <div class="flex gap-4">
             <div class="w-10 h-10 rounded-full bg-sky-700 text-white flex items-center justify-center font-semibold shrink-0">4</div>
             <div>
-              <h3 class="font-semibold text-sky-800 mb-1">Зворотний зв'язок і прогрес</h3>
-              <p class="text-beige-700">Наприкінці місяця ми підводимо підсумки: що змінилось, що стало легше і на чому фокус далі. Саме регулярність дає відчутний результат і змінює не лише тіло, а й стан.</p>
+              <h3 class="font-semibold text-sky-800 mb-1" data-i18n="how.step4.title">Зворотний зв'язок і прогрес</h3>
+              <p class="text-beige-700" data-i18n="how.step4.desc">Наприкінці місяця ми підводимо підсумки: що змінилось, що стало легше і на чому фокус далі. Саме регулярність дає відчутний результат і змінює не лише тіло, а й стан.</p>
             </div>
           </div>
         </div>
@@ -234,55 +249,55 @@
       <div class="absolute inset-0 bg-white/80"></div>
     </div>
     <div class="relative z-10 max-w-2xl mx-auto px-4">
-      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-6 text-center">
+      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-6 text-center" data-i18n="who.title">
         Кому підійде практика йоги
       </h2>
       <ul class="space-y-3 text-beige-800">
         <li class="flex items-start gap-3">
           <span class="text-sky-600 mt-1 shrink-0">✦</span>
-          <span>якщо у вас малорухливий спосіб життя і відчувається напруга в тілі</span>
+          <span data-i18n="who.1">якщо у вас малорухливий спосіб життя і відчувається напруга в тілі</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-sky-600 mt-1 shrink-0">✦</span>
-          <span>якщо болить спина, затискає шию або є дискомфорт у тазі</span>
+          <span data-i18n="who.2">якщо болить спина, затискає шию або є дискомфорт у тазі</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-sky-600 mt-1 shrink-0">✦</span>
-          <span>якщо ви втомлюєтесь і не вистачає енергії протягом дня</span>
+          <span data-i18n="who.3">якщо ви втомлюєтесь і не вистачає енергії протягом дня</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-sky-600 mt-1 shrink-0">✦</span>
-          <span>якщо ви відновлюєтесь після пологів (через 1–2 місяці)</span>
+          <span data-i18n="who.4">якщо ви відновлюєтесь після пологів (через 1–2 місяці)</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-sky-600 mt-1 shrink-0">✦</span>
-          <span>якщо хочеться більш спокійного стану і "тихішої" голови</span>
+          <span data-i18n="who.5">якщо хочеться більш спокійного стану і "тихішої" голови</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-sky-600 mt-1 shrink-0">✦</span>
-          <span>якщо давно хотіли почати йогу, але не знали як</span>
+          <span data-i18n="who.6">якщо давно хотіли почати йогу, але не знали як</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-sky-600 mt-1 shrink-0">✦</span>
-          <span>якщо здається, що "я не гнучка / не спортивна"</span>
+          <span data-i18n="who.7">якщо здається, що "я не гнучка / не спортивна"</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-sky-600 mt-1 shrink-0">✦</span>
-          <span>якщо хочеться м'якого, але ефективного навантаження</span>
+          <span data-i18n="who.8">якщо хочеться м'якого, але ефективного навантаження</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-sky-600 mt-1 shrink-0">✦</span>
-          <span>якщо важливо займатись у своєму темпі, без тиску</span>
+          <span data-i18n="who.9">якщо важливо займатись у своєму темпі, без тиску</span>
         </li>
       </ul>
-      <p class="mt-6 text-sky-700 font-medium italic text-center">Можна без досвіду — важливо лише ваше бажання почати.</p>
+      <p class="mt-6 text-sky-700 font-medium italic text-center" data-i18n="who.tagline">Можна без досвіду - важливо лише ваше бажання почати.</p>
     </div>
   </section>
 
   <!-- Formats / Schedule (Accordion) -->
   <section id="formats" class="bg-beige-50 py-10">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-10 text-center">
+      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-10 text-center" data-i18n="formats.title">
         Оберіть свій формат практики
       </h2>
       <div class="space-y-4">
@@ -291,7 +306,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-sky-50/50 transition">
             <div class="flex items-center gap-3">
               <span class="text-2xl">🧘‍♀️</span>
-              <h3 class="text-lg font-semibold text-sky-800">Групові заняття в студії (Тракторул)</h3>
+              <h3 class="text-lg font-semibold text-sky-800" data-i18n="formats.group.title">Групові заняття в студії (Тракторул)</h3>
             </div>
             <svg class="w-5 h-5 text-sky-600 transition-transform duration-300 accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -299,11 +314,11 @@
           </button>
           <div class="accordion-content">
             <div class="px-6 pb-6 text-beige-700 space-y-3">
-              <p><strong>Понеділок / П'ятниця — 11:00–12:00</strong></p>
-              <p>Малі групи до 10 людей — увага до кожної, комфортний темп і атмосфера без тиску.</p>
+              <p><strong data-i18n="formats.group.schedule">Понеділок / П'ятниця - 11:00–12:00</strong></p>
+              <p data-i18n="formats.group.desc">Малі групи до 10 людей - увага до кожної, комфортний темп і атмосфера без тиску.</p>
               <p class="flex items-start gap-2">
                 <span>📍</span>
-                <span>Art Center Brașov — Strada Manole Diamandi 45, Brașov</span>
+                <span data-i18n="formats.group.location">Art Center Brașov - Strada Manole Diamandi 45, Brașov</span>
               </p>
             </div>
           </div>
@@ -313,7 +328,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-sky-50/50 transition">
             <div class="flex items-center gap-3">
               <span class="text-2xl">💻</span>
-              <h3 class="text-lg font-semibold text-sky-800">Онлайн-заняття</h3>
+              <h3 class="text-lg font-semibold text-sky-800" data-i18n="formats.online.title">Онлайн-заняття</h3>
             </div>
             <svg class="w-5 h-5 text-sky-600 transition-transform duration-300 accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -321,8 +336,8 @@
           </button>
           <div class="accordion-content">
             <div class="px-6 pb-6 text-beige-700 space-y-3">
-              <p><strong>Понеділок / Середа / П'ятниця — 11:00–12:00</strong></p>
-              <p>Учениці відмічають, що онлайн-практика така ж якісна, як і в студії.</p>
+              <p><strong data-i18n="formats.online.schedule">Понеділок / Середа / П'ятниця - 11:00–12:00</strong></p>
+              <p data-i18n="formats.online.desc">Учениці відмічають, що онлайн-практика така ж якісна, як і в студії.</p>
             </div>
           </div>
         </div>
@@ -331,7 +346,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-sky-50/50 transition">
             <div class="flex items-center gap-3">
               <span class="text-2xl">🌿</span>
-              <h3 class="text-lg font-semibold text-sky-800">Індивідуальні заняття (студія / онлайн)</h3>
+              <h3 class="text-lg font-semibold text-sky-800" data-i18n="formats.individual.title">Індивідуальні заняття (студія / онлайн)</h3>
             </div>
             <svg class="w-5 h-5 text-sky-600 transition-transform duration-300 accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -339,15 +354,15 @@
           </button>
           <div class="accordion-content">
             <div class="px-6 pb-6 text-beige-700 space-y-3">
-              <p>Персональна практика під ваш запит, стан і цілі.</p>
-              <p>З аналізом, підтримкою і відстеженням прогресу.</p>
-              <p><strong>Час і дні — узгоджуються індивідуально.</strong></p>
+              <p data-i18n="formats.individual.p1">Персональна практика під ваш запит, стан і цілі.</p>
+              <p data-i18n="formats.individual.p2">З аналізом, підтримкою і відстеженням прогресу.</p>
+              <p><strong data-i18n="formats.individual.p3">Час і дні - узгоджуються індивідуально.</strong></p>
             </div>
           </div>
         </div>
       </div>
       <div class="text-center mt-10">
-        <a href="https://t.me/tetiana_ursul" target="_blank" class="inline-flex items-center gap-2 bg-sky-700 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-sky-800 transition shadow-lg shadow-sky-700/20">
+        <a href="https://t.me/tetiana_ursul" target="_blank" class="inline-flex items-center gap-2 bg-sky-700 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-sky-800 transition shadow-lg shadow-sky-700/20" data-i18n="formats.cta">
           Записатись на пробне заняття
         </a>
       </div>
@@ -357,75 +372,75 @@
   <!-- Pricing -->
   <section id="pricing" class="bg-white py-10">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-4 text-center">
+      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-4 text-center" data-i18n="pricing.title">
         Варіанти участі і вартість занять
       </h2>
-      <p class="text-center text-beige-700 mb-12 max-w-2xl mx-auto">Почніть з пробного заняття — і відчуйте, як відгукнеться вам практика</p>
+      <p class="text-center text-beige-700 mb-12 max-w-2xl mx-auto" data-i18n="pricing.subtitle">Почніть з пробного заняття - і відчуйте, як відгукнеться вам практика</p>
 
       <!-- Studio -->
-      <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-semibold text-sky-700 mb-6 text-center">Практика в студії</h3>
+      <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-semibold text-sky-700 mb-6 text-center" data-i18n="pricing.studio.heading">Практика в студії</h3>
       <div class="grid sm:grid-cols-3 gap-6 mb-16">
         <div class="bg-beige-50 rounded-xl p-6 text-center border border-beige-200">
           <p class="text-3xl font-bold text-sky-800 mb-2">50 <span class="text-lg">RON</span></p>
-          <p class="font-semibold text-beige-800 mb-2">Разове заняття</p>
-          <p class="text-sm text-beige-700">Підійде, щоб познайомитись і відчути практику</p>
+          <p class="font-semibold text-beige-800 mb-2" data-i18n="pricing.studio.single.label">Разове заняття</p>
+          <p class="text-sm text-beige-700" data-i18n="pricing.studio.single.desc">Підійде, щоб познайомитись і відчути практику</p>
         </div>
         <div class="bg-beige-50 rounded-xl p-6 text-center border border-beige-200 relative">
           <p class="text-3xl font-bold text-sky-800 mb-2">200 <span class="text-lg">RON</span></p>
-          <p class="font-semibold text-beige-800 mb-2">Абонемент на 4 заняття</p>
-          <p class="text-sm text-beige-700">Оптимально, щоб увійти в регулярність</p>
-          <p class="text-xs text-beige-400 mt-2">Термін дії — 3 тижні</p>
+          <p class="font-semibold text-beige-800 mb-2" data-i18n="pricing.studio.4.label">Абонемент на 4 заняття</p>
+          <p class="text-sm text-beige-700" data-i18n="pricing.studio.4.desc">Оптимально, щоб увійти в регулярність</p>
+          <p class="text-xs text-beige-400 mt-2" data-i18n="pricing.studio.4.term">Термін дії - 3 тижні</p>
         </div>
         <div class="bg-beige-50 rounded-xl p-6 text-center border border-beige-200">
           <p class="text-3xl font-bold text-sky-800 mb-2">400 <span class="text-lg">RON</span></p>
-          <p class="font-semibold text-beige-800 mb-2">Абонемент на 8 занять</p>
-          <p class="text-sm text-beige-700">Дає відчутний результат у тілі і стані</p>
-          <p class="text-xs text-beige-400 mt-2">Термін дії — 5 тижнів</p>
+          <p class="font-semibold text-beige-800 mb-2" data-i18n="pricing.studio.8.label">Абонемент на 8 занять</p>
+          <p class="text-sm text-beige-700" data-i18n="pricing.studio.8.desc">Дає відчутний результат у тілі і стані</p>
+          <p class="text-xs text-beige-400 mt-2" data-i18n="pricing.studio.8.term">Термін дії - 5 тижнів</p>
         </div>
       </div>
 
       <!-- Online -->
-      <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-semibold text-sky-700 mb-6 text-center">Практика онлайн</h3>
+      <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-semibold text-sky-700 mb-6 text-center" data-i18n="pricing.online.heading">Практика онлайн</h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         <div class="bg-beige-50 rounded-xl p-6 text-center border border-beige-200">
           <p class="text-3xl font-bold text-sky-800 mb-2">35 <span class="text-lg">RON</span></p>
-          <p class="font-semibold text-beige-800 mb-2">Разове заняття</p>
-          <p class="text-sm text-beige-700">Для знайомства з форматом</p>
+          <p class="font-semibold text-beige-800 mb-2" data-i18n="pricing.online.single.label">Разове заняття</p>
+          <p class="text-sm text-beige-700" data-i18n="pricing.online.single.desc">Для знайомства з форматом</p>
         </div>
         <div class="bg-beige-50 rounded-xl p-6 text-center border border-beige-200">
           <p class="text-3xl font-bold text-sky-800 mb-2">140 <span class="text-lg">RON</span></p>
-          <p class="font-semibold text-beige-800 mb-2">Абонемент на 4 заняття</p>
-          <p class="text-xs text-beige-400 mt-2">Термін дії — 3 тижні</p>
+          <p class="font-semibold text-beige-800 mb-2" data-i18n="pricing.online.4.label">Абонемент на 4 заняття</p>
+          <p class="text-xs text-beige-400 mt-2" data-i18n="pricing.online.4.term">Термін дії - 3 тижні</p>
         </div>
         <div class="bg-beige-50 rounded-xl p-6 text-center border border-beige-200">
           <p class="text-3xl font-bold text-sky-800 mb-2">280 <span class="text-lg">RON</span></p>
-          <p class="font-semibold text-beige-800 mb-2">Абонемент на 8 занять</p>
-          <p class="text-xs text-beige-400 mt-2">Термін дії — 5 тижнів</p>
+          <p class="font-semibold text-beige-800 mb-2" data-i18n="pricing.online.8.label">Абонемент на 8 занять</p>
+          <p class="text-xs text-beige-400 mt-2" data-i18n="pricing.online.8.term">Термін дії - 5 тижнів</p>
         </div>
         <div class="bg-beige-50 rounded-xl p-6 text-center border border-beige-200">
           <p class="text-3xl font-bold text-sky-800 mb-2">420 <span class="text-lg">RON</span></p>
-          <p class="font-semibold text-beige-800 mb-2">Абонемент на 12 занять</p>
-          <p class="text-xs text-beige-400 mt-2">Термін дії — 5 тижнів</p>
+          <p class="font-semibold text-beige-800 mb-2" data-i18n="pricing.online.12.label">Абонемент на 12 занять</p>
+          <p class="text-xs text-beige-400 mt-2" data-i18n="pricing.online.12.term">Термін дії - 5 тижнів</p>
         </div>
       </div>
 
       <!-- Individual -->
-      <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-semibold text-sky-700 mb-6 text-center">Індивідуальна практика / 1 заняття</h3>
+      <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-semibold text-sky-700 mb-6 text-center" data-i18n="pricing.individual.heading">Індивідуальна практика / 1 заняття</h3>
       <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-10">
         <div class="bg-beige-50 rounded-xl p-6 text-center border border-beige-200">
           <p class="text-3xl font-bold text-sky-800 mb-2">170 <span class="text-lg">RON</span></p>
-          <p class="font-semibold text-beige-800 mb-2">Студія</p>
-          <p class="text-sm text-beige-700">Персональна практика під ваш запит, стан і цілі (включаючи оренду студії)</p>
+          <p class="font-semibold text-beige-800 mb-2" data-i18n="pricing.individual.studio">Студія</p>
+          <p class="text-sm text-beige-700" data-i18n="pricing.individual.studio.desc">Персональна практика під ваш запит, стан і цілі (включаючи оренду студії)</p>
         </div>
         <div class="bg-beige-50 rounded-xl p-6 text-center border border-beige-200">
           <p class="text-3xl font-bold text-sky-800 mb-2">120 <span class="text-lg">RON</span></p>
-          <p class="font-semibold text-beige-800 mb-2">Онлайн</p>
-          <p class="text-sm text-beige-700">Індивідуальна практика з поясненням і корекцією в режимі реального часу</p>
+          <p class="font-semibold text-beige-800 mb-2" data-i18n="pricing.individual.online">Онлайн</p>
+          <p class="text-sm text-beige-700" data-i18n="pricing.individual.online.desc">Індивідуальна практика з поясненням і корекцією в режимі реального часу</p>
         </div>
       </div>
 
       <div class="text-center">
-        <a href="https://t.me/tetiana_ursul" target="_blank" class="inline-flex items-center gap-2 bg-sky-700 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-sky-800 transition shadow-lg shadow-sky-700/20">
+        <a href="https://t.me/tetiana_ursul" target="_blank" class="inline-flex items-center gap-2 bg-sky-700 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-sky-800 transition shadow-lg shadow-sky-700/20" data-i18n="pricing.cta">
           Підібрати формат →
         </a>
       </div>
@@ -435,10 +450,10 @@
   <!-- Reviews -->
   <section id="reviews" class="bg-beige-50 py-10">
     <div class="max-w-5xl mx-auto px-4">
-      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-4 text-center">
+      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-sky-800 mb-4 text-center" data-i18n="reviews.title">
         Відгуки учениць
       </h2>
-      <p class="text-center text-beige-700 mb-12">Невеликі зміни в тілі та стані, які відчуваються вже з перших занять</p>
+      <p class="text-center text-beige-700 mb-12" data-i18n="reviews.subtitle">Невеликі зміни в тілі та стані, які відчуваються вже з перших занять</p>
       <div class="relative">
         <div id="carousel" class="overflow-hidden rounded-xl">
           <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out">
@@ -463,6 +478,9 @@
             <div class="w-full shrink-0 flex justify-center px-4">
               <img src="./images/review-new-7.png" alt="Відгук 7" class="max-h-[500px] rounded-xl shadow-sm object-contain" />
             </div>
+            <div class="w-full shrink-0 flex justify-center px-4">
+              <img src="./images/review-new-8.png" alt="Відгук 8" class="max-h-[500px] rounded-xl shadow-sm object-contain" />
+            </div>
           </div>
         </div>
         <!-- Arrows -->
@@ -481,6 +499,7 @@
           <button class="w-3 h-3 rounded-full bg-beige-300" data-index="4"></button>
           <button class="w-3 h-3 rounded-full bg-beige-300" data-index="5"></button>
           <button class="w-3 h-3 rounded-full bg-beige-300" data-index="6"></button>
+          <button class="w-3 h-3 rounded-full bg-beige-300" data-index="7"></button>
         </div>
       </div>
     </div>
@@ -489,12 +508,12 @@
   <!-- YouTube -->
   <section class="bg-sky-900 text-white py-10">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold mb-4 text-center">
+      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold mb-4 text-center" data-i18n="youtube.title">
         Короткі практики, які можна м'яко почати вже сьогодні
       </h2>
       <div class="flex justify-center mb-8">
-        <a href="https://youtube.com/channel/UCj1UTbVyxJdzBzmeyfAYhrA" target="_blank"
-           class="border border-white/70 text-white text-sm uppercase tracking-widest px-6 py-2 hover:bg-white hover:text-sky-900 transition-all duration-300">
+        <a href="https://youtube.com/channel/UCj1UTbVyxJdzBzmeyfAYhrA/videos" target="_blank"
+           class="border border-white/70 text-white text-sm uppercase tracking-widest px-6 py-2 hover:bg-white hover:text-sky-900 transition-all duration-300" data-i18n="youtube.channel">
           Мій канал
         </a>
       </div>
@@ -511,7 +530,7 @@
             </div>
           </div>
         </a>
-        <p class="mt-3 text-white/80 text-sm text-center">М'яка ранкова практика йоги для всього тіла</p>
+        <p class="mt-3 text-white/80 text-sm text-center" data-i18n="youtube.video.caption">М'яка ранкова практика йоги для всього тіла</p>
       </div>
     </div>
   </section>
@@ -522,23 +541,23 @@
       <img src="./images/cta.jpg" alt="" class="w-full h-full object-cover opacity-20" />
     </div>
     <div class="relative max-w-3xl mx-auto px-4 text-center">
-      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-center mb-6">
+      <h2 class="font-['Cormorant_Garamond',serif] text-3xl md:text-4xl font-semibold text-center mb-6" data-i18n="cta.title">
         Можливо, це саме той момент щоб почати
       </h2>
-      <p class="text-lg text-sky-100 mb-4">
-        Відвідайте пробне заняття — щоб відчути формат, темп і стан після практики.
+      <p class="text-lg text-sky-100 mb-4" data-i18n="cta.subtitle">
+        Відвідайте пробне заняття - щоб відчути формат, темп і стан після практики.
       </p>
-      <a href="https://t.me/tetiana_ursul" target="_blank" class="inline-flex items-center gap-2 bg-white text-sky-800 px-8 py-3 rounded-full text-base font-semibold hover:bg-beige-100 transition shadow-lg">
+      <a href="https://t.me/tetiana_ursul" target="_blank" class="inline-flex items-center gap-2 bg-white text-sky-800 px-8 py-3 rounded-full text-base font-semibold hover:bg-beige-100 transition shadow-lg" data-i18n="cta.button">
         Записатись на пробне →
       </a>
-      <p class="text-sm text-sky-200 mt-6">Кількість місць у групі обмежена</p>
+      <p class="text-sm text-sky-200 mt-6" data-i18n="cta.note">Кількість місць у групі обмежена</p>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="bg-beige-100 py-8">
     <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="font-['Cormorant_Garamond',serif] text-3xl font-semibold text-sky-800 mb-6">
+      <h2 class="font-['Cormorant_Garamond',serif] text-3xl font-semibold text-sky-800 mb-6" data-i18n="contact.title">
         Залишились питання або хочете записатись?
       </h2>
       <div class="flex items-center justify-center gap-8 text-beige-700 mb-6">
@@ -551,15 +570,18 @@
         <a href="https://www.instagram.com/yoga_ursul" target="_blank" class="hover:text-sky-700 transition" title="Instagram">
           <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
+        <a href="https://youtube.com/channel/UCj1UTbVyxJdzBzmeyfAYhrA/videos" target="_blank" class="hover:text-sky-700 transition" title="YouTube">
+          <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
       </div>
-      <p class="text-xs text-beige-400">Всі права захищені. Будь-яке копіювання матеріалів дозволяється тільки з погодження правовласника</p>
+      <p class="text-xs text-beige-400" data-i18n="contact.copyright">Всі права захищені. Будь-яке копіювання матеріалів дозволяється тільки з погодження правовласника</p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-beige-200 py-6">
     <div class="max-w-6xl mx-auto px-4 text-center text-sm text-beige-700">
-      <p>© 2026 Тетяна Урсул · Йога для мам · Брашов та онлайн</p>
+      <p data-i18n="footer.text">© 2026 Тетяна Урсул · Йога для мам · Брашов та онлайн</p>
     </div>
   </footer>
 
