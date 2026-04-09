@@ -447,10 +447,9 @@ const translations = {
     // Highlight active switcher button
     document.querySelectorAll('[data-lang-btn]').forEach(btn => {
       const isActive = btn.getAttribute('data-lang-btn') === lang;
-      btn.classList.toggle('bg-sky-700', isActive);
-      btn.classList.toggle('text-white', isActive);
-      btn.classList.toggle('text-beige-700', !isActive);
-      btn.classList.toggle('bg-transparent', !isActive);
+      btn.className = isActive
+        ? 'px-1 text-xs font-bold text-white transition-all duration-200 cursor-pointer'
+        : 'px-1 text-xs font-normal text-white/50 hover:text-white/80 transition-all duration-200 cursor-pointer';
     });
 
     localStorage.setItem(STORAGE_KEY, lang);
