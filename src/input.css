@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 68px;
 }
 
 .accordion-content {
@@ -28,4 +29,14 @@ html {
 
 .accordion-content.open {
   max-height: 600px;
+}
+
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+#mobile-menu.open {
+  max-height: 300px;
 }

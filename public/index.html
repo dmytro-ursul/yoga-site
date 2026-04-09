@@ -30,12 +30,14 @@
         </svg>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-beige-100 px-4 pb-4">
-      <a href="#about" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.about">Про мене</a>
-      <a href="#formats" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.formats">Формати</a>
-      <a href="#pricing" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.pricing">Ціни</a>
-      <a href="#reviews" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.reviews">Відгуки</a>
-      <a href="#contact" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.contact">Контакти</a>
+    <div id="mobile-menu" class="md:hidden bg-white">
+      <div class="border-t border-beige-100 px-4 pb-4">
+        <a href="#about" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.about">Про мене</a>
+        <a href="#formats" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.formats">Формати</a>
+        <a href="#pricing" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.pricing">Ціни</a>
+        <a href="#reviews" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.reviews">Відгуки</a>
+        <a href="#contact" class="block py-2 text-beige-700 hover:text-sky-700" data-i18n="nav.contact">Контакти</a>
+      </div>
     </div>
   </nav>
 
@@ -582,12 +584,19 @@
   <script>
     // Mobile menu
     document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
+      document.getElementById('mobile-menu').classList.toggle('open');
     });
     document.querySelectorAll('#mobile-menu a').forEach(link => {
       link.addEventListener('click', () => {
-        document.getElementById('mobile-menu').classList.add('hidden');
+        document.getElementById('mobile-menu').classList.remove('open');
       });
+    });
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove('open');
+      }
     });
 
     // Accordion
