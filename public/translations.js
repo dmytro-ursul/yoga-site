@@ -71,6 +71,9 @@ const translations = {
     "who.9": "якщо важливо займатись у своєму темпі, без тиску",
     "who.tagline": "Можна без досвіду - важливо лише ваше бажання почати.",
 
+    // Atmosphere
+    "atmosphere.title": "Як проходить практика",
+
     // Formats
     "formats.title": "Оберіть свій формат практики",
     "formats.group.title": "Групові заняття в студії (Тракторул)",
@@ -209,6 +212,9 @@ const translations = {
     "who.9": "если важно заниматься в своём темпе, без давления",
     "who.tagline": "Можно без опыта - важно лишь ваше желание начать.",
 
+    // Atmosphere
+    "atmosphere.title": "Як проходить практика",
+
     // Formats
     "formats.title": "Выберите свой формат практики",
     "formats.group.title": "Групповые занятия в студии (Тракторул)",
@@ -346,6 +352,9 @@ const translations = {
     "who.8": "if you want gentle but effective exercise",
     "who.9": "if it's important to practice at your own pace, without pressure",
     "who.tagline": "No experience needed - all that matters is your desire to start.",
+
+    // Atmosphere
+    "atmosphere.title": "How the Practice Goes",
 
     // Formats
     "formats.title": "Choose your practice format",
